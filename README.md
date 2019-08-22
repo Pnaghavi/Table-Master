@@ -10,3 +10,4 @@ Authentication to the app is done through Firebase Auth, using email address and
 ![App noSQL](/images/SQLandNoSQL.PNG)
 ![App Data](/images/data.PNG)
 ![App Staff Layout](/images/staffLayout.PNG)
+![App Supervisor Layout](/images/SupervisorLayout.PNG)
