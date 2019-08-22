@@ -228,6 +228,8 @@ class StaffActivity : AppCompatActivity(), BLE.Callback {
             if(currentTable.updateObjectInDB()) {
                 writeLine("START " + "id:"+currentTable.tableID)// this status means that the timer is running
             }
+            var v =getSystemService(Context.VIBRATOR_SERVICE) as Vibrator
+            v.vibrate(500)
 
         }
         else if(Status == "WARNING1")//this status means 30 seconds have pass

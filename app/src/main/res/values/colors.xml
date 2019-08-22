@@ -7,9 +7,9 @@
     <color name="login_text_color">#E6FFE6</color>
     <color name="login_accent_color">#4DA6FF</color>
     <color name="staff_background_color">#00CC66</color>
-    <color name="staff_text_color">#FFFFFF</color>
+    <color name="staff_text_color">#4169E1</color>
     <color name="staff_accent_color">#33FF99</color>
     <color name="manager_background_color">#FF9900</color>
-    <color name="manager_text_color">#FFFFFF</color>
+    <color name="manager_text_color">#4169E1</color>
     <color name="manager_accent_color">#FFAD33</color>
 </resources>

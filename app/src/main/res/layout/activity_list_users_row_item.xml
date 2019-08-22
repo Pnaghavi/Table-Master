@@ -33,13 +33,15 @@
     <TextView
             android:id="@+id/tv_is_manager"
             android:text="manager"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="57dp"
+            android:layout_height="19dp"
             app:layout_constraintTop_toTopOf="parent"
-            android:layout_marginTop="14dp" android:layout_marginEnd="24dp" app:layout_constraintEnd_toEndOf="parent"/>
+            android:layout_marginTop="14dp" android:layout_marginEnd="30dp" app:layout_constraintEnd_toEndOf="parent"
+            android:textSize="12sp" android:textAlignment="center"/>
     <Button
             android:id="@+id/btn_edit_user"
             android:text="Edit"
+            android:textColor="#4169E1"
             android:layout_width="74dp"
             android:layout_height="41dp"
             app:layout_constraintTop_toTopOf="parent" android:layout_marginTop="44dp"

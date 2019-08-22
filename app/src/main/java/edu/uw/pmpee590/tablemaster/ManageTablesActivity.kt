@@ -9,7 +9,10 @@ class ManageTablesActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_manage_tables)
         var allTables= TablesDataA()
-        allTables.readBusy(tableText)
+        allTables.readBusy(tv_busyTables)
 
+        btn_back_mgr_act.setOnClickListener {
+            finish()
+        }
     }
 }

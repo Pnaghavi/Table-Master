@@ -5,7 +5,7 @@
     <uses-permission android:name="android.permission.BLUETOOTH"/>
     <uses-permission android:name="android.permission.BLUETOOTH_ADMIN"/>
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
-    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.VIBRATE"/>
 
     <uses-feature
             android:name="android.hardware.bluetooth_le"
@@ -18,19 +18,31 @@
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
-        <activity android:name=".ManageUsersActivity" android:theme="@style/ManagerTheme" >
+        <activity android:name=".EditUserActivity"
+                  android:theme="@style/ManagerTheme">
         </activity>
         <activity
-                android:name=".RegisterNewUserActivity" android:theme="@style/ManagerTheme">
+                android:name=".ManageUsersActivity"
+                android:theme="@style/ManagerTheme">
         </activity>
         <activity
-                android:name=".StaffActivity" android:theme="@style/StaffTheme" android:screenOrientation="portrait">
+                android:name=".RegisterNewUserActivity"
+                android:theme="@style/ManagerTheme">
         </activity>
         <activity
-                android:name=".ManagerActivity" android:theme="@style/ManagerTheme" android:screenOrientation="portrait">
+                android:name=".StaffActivity"
+                android:screenOrientation="portrait"
+                android:theme="@style/StaffTheme">
         </activity>
         <activity
-                android:name=".ManageTablesActivity" android:theme="@style/ManagerTheme" android:screenOrientation="portrait">
+                android:name=".ManagerActivity"
+                android:screenOrientation="portrait"
+                android:theme="@style/ManagerTheme">
+        </activity>
+        <activity
+                android:name=".ManageTablesActivity"
+                android:screenOrientation="portrait"
+                android:theme="@style/ManagerTheme">
         </activity>
         <activity
                 android:name=".MainActivity"

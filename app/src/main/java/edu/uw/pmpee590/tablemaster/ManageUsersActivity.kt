@@ -9,12 +9,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.*
-import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.android.synthetic.main.activity_manage_users.*
+import java.math.RoundingMode
+import java.text.DecimalFormat
 
-
-var staffList = ArrayList<userDataString>()
-//var adapter: Adapter = ManageUsersActivity.MyCustomAdapter
 var myUsers:UsersDataA=UsersDataA()
 
 class ManageUsersActivity : AppCompatActivity() {
@@ -24,9 +22,6 @@ class ManageUsersActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_manage_users)
-        //myUsers.allUsers()
-
-        //adapter = MyCustomAdapter(this)
 
         refreshArrayList()
         adapter.notifyDataSetChanged()
@@ -41,14 +36,13 @@ class ManageUsersActivity : AppCompatActivity() {
         }
 
         btn_refresh_list.setOnClickListener {
-            //refreshArrayList()
-            //Thread.sleep(1000)
             refreshArrayList()
         }
 
-
+        btn_back_mgr.setOnClickListener {
+            finish()
+        }
     }
-
 
     fun refreshArrayList() {
         adapter = MyCustomAdapter(this)
@@ -61,7 +55,7 @@ class ManageUsersActivity : AppCompatActivity() {
 class MyCustomAdapter(context: Context) : BaseAdapter() {
 
     private val mContext: Context
-
+    val df = DecimalFormat("#.##")
 
     init {
         mContext = context
@@ -80,10 +74,15 @@ class MyCustomAdapter(context: Context) : BaseAdapter() {
     }
 
     override fun getView(position: Int, convertView: View?, viewGroup: ViewGroup?): View {
+        var convertView = convertView
+        var viewHolder:ViewHolder
+
         val layoutInflater = LayoutInflater.from(mContext)
         val rowMain = layoutInflater.inflate(R.layout.activity_list_users_row_item, viewGroup, false)
 
-        val listUser = myUsers.allUsers[position]
+        viewHolder = ViewHolder()
+        viewHolder.btn_edit = rowMain.findViewById(R.id.btn_edit_user) as Button
+        //val listUser = myUsers.allUsers[position]
 
         val tvFullName = rowMain.findViewById<TextView>(R.id.tv_full_name)
         val tvEmailAddr = rowMain.findViewById<TextView>(R.id.tv_email_addr)
@@ -93,7 +92,10 @@ class MyCustomAdapter(context: Context) : BaseAdapter() {
         tvFullName.text = myUsers.allUsers[position].userName + " " + myUsers.allUsers[position].userLastName
         //tvFullName.text = listUser.userFirstName + " " + listUser.userLastName
         tvEmailAddr.text = myUsers.allUsers[position].userEmail
-        tvRunningAVE.text = myUsers.allUsers[position].userRunningAVE.toString()
+        var tempTvRunAVE = myUsers.allUsers[position].userRunningAVE
+        tvRunningAVE.text = df.format(tempTvRunAVE).toString()
+        //tvRunningAVE.text = myUsers.allUsers[position].userRunningAVE.toString()
+
         if(myUsers.allUsers[position].userSupervisor == true){
             tvManagerStatus.text = "Supervisor"
             tvManagerStatus.setBackgroundColor(Color.YELLOW)
@@ -105,7 +107,23 @@ class MyCustomAdapter(context: Context) : BaseAdapter() {
             tvManagerStatus.setTextColor(Color.BLACK)
         }
 
+        viewHolder.btn_edit!!.setOnClickListener {
+            val intent = Intent(mContext, EditUserActivity::class.java)
+            intent.putExtra("staffID",myUsers.allUsers[position].userID)
+            intent.putExtra("staffEmail", myUsers.allUsers[position].userEmail)
+            intent.putExtra("firstName",myUsers.allUsers[position].userName)
+            intent.putExtra("lastName",myUsers.allUsers[position].userLastName)
+            intent.putExtra("runningAVE",myUsers.allUsers[position].userRunningAVE)
+            intent.putExtra("tableNum",myUsers.allUsers[position].userTotalTablesServedNUM)
+            intent.putExtra("isSupervisor",myUsers.allUsers[position].userSupervisor)
+            mContext.startActivity(intent)
+        }
+
         return rowMain
+    }
+
+    private inner class ViewHolder {
+        var btn_edit: Button? = null
     }
 }
 

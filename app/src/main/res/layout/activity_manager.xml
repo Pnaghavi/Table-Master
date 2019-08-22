@@ -14,7 +14,8 @@
             android:layout_height="32dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintHorizontal_bias="0.506" app:layout_constraintEnd_toEndOf="parent"
-            android:textSize="24sp" app:layout_constraintTop_toTopOf="parent" android:layout_marginTop="20dp"/>
+            android:textSize="24sp" app:layout_constraintTop_toTopOf="parent" android:layout_marginTop="20dp"
+            android:textAlignment="center"/>
     <TextView
             android:id="@+id/tv_loggedInText"
             android:text="Logged in as:"
@@ -22,7 +23,8 @@
             android:layout_height="27dp"
             android:textSize="18sp" app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintHorizontal_bias="0.487" app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginTop="60dp" app:layout_constraintTop_toBottomOf="@+id/tv_mgrActivityTitle"/>
+            android:layout_marginTop="60dp" app:layout_constraintTop_toBottomOf="@+id/tv_mgrActivityTitle"
+            android:textAlignment="center"/>
     <TextView
             android:id="@+id/tv_logged_in_as_mgr"
             android:text="Manager Login"
@@ -30,12 +32,13 @@
             android:layout_height="22dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tv_loggedInText" android:layout_marginTop="10dp"/>
+            app:layout_constraintTop_toBottomOf="@+id/tv_loggedInText" android:layout_marginTop="10dp"
+            android:textAlignment="center"/>
     <Button
+            android:id="@+id/btn_manage_staff"
             android:text="Manage Staff"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/btn_manage_staff"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintHorizontal_bias="0.5" app:layout_constraintEnd_toEndOf="parent"
             android:layout_marginBottom="20dp" app:layout_constraintBottom_toTopOf="@+id/btn_manage_tables"/>
