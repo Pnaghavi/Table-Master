@@ -1,0 +1,40 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="LoginTheme" parent="AppTheme">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:windowBackground">@color/login_background_color</item>
+        <item name="android:textColor">@color/login_text_color</item>
+        <item name="android:colorAccent">@color/login_accent_color</item>
+        <item name="android:textColorPrimary">@color/login_text_color</item>
+        <item name="android:textColorSecondary">@color/login_text_color</item>
+        <item name="colorControlNormal">@color/login_accent_color</item>
+        <item name="colorControlActivated">@color/login_accent_color</item>
+        <item name="colorControlHighlight">@color/login_accent_color</item>
+        <item name="android:textColorHint">@android:color/white</item>
+    </style>
+
+    <style name="StaffTheme" parent="AppTheme">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:windowBackground">@color/staff_background_color</item>
+        <item name="android:textColor">@color/staff_text_color</item>
+        <item name="android:colorAccent">@color/staff_accent_color</item>
+    </style>
+
+    <style name="ManagerTheme" parent="AppTheme">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:windowBackground">@color/manager_background_color</item>
+        <item name="android:textColor">@color/manager_text_color</item>
+        <item name="android:colorAccent">@color/manager_accent_color</item>
+    </style>
+</resources>
